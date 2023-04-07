@@ -1,0 +1,485 @@
+html,
+.body {
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+
+  a {
+    color: white;
+    font-size: 30px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.body {
+  background-image: url(../assets/img/background.gif);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.wrapper {
+  max-width: 1600px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.language {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  z-index: 2;
+  font-size: 1.5vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.btn-rus,
+.btn-eng {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  &:hover {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+}
+
+.btn-eng {
+  margin-right: 5%;
+}
+
+.header,
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+  &__container {
+    padding: 0px 120px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+}
+
+.main__container {
+  padding: 50px 120px 0px 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 300px;
+}
+
+.header {
+  position: relative;
+  &__container {
+    padding: 0px 120px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+}
+
+.header .menu {
+  &__list {
+    position: relative;
+    max-width: 500px;
+    top: -10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 auto;
+  }
+
+  &__item {
+    position: relative;
+    top: -60px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  &__item:hover {
+    top: -5px;
+  }
+
+  &__item_link {
+    position: absolute;
+    top: 50%;
+  }
+}
+
+.quiz-logo {
+  position: relative;
+  top: -25px;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    top: 0px;
+  }
+}
+
+.slider {
+  position: relative;
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slider-item__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h4 {
+    position: absolute;
+    max-width: 80px;
+    bottom: 15%;
+    left: 33%;
+    color: white;
+    z-index: 1;
+  }
+}
+
+.title-board {
+  position: relative;
+  max-width: 100%;
+  top: -5px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.video-title {
+  position: relative;
+  width: 50%;
+  top: -80px;
+  transition: all 1s ease-in-out;
+
+  &:hover {
+    top: 0px;
+  }
+}
+
+.video-container {
+  position: relative;
+  max-width: 400px;
+  border-radius: 50px;
+  overflow: hidden;
+  z-index: 2;
+  .iframe {
+    border-radius: 50px;
+  }
+}
+
+.door-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/img/door-video.jpg);
+  background-size: cover;
+  border-radius: 50px;
+  transition: all 2s ease-in-out;
+  z-index: 3;
+}
+
+.door-handle {
+  position: absolute;
+  top: 45%;
+  left: 8%;
+  transform-origin: 10px center;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotateZ(20deg);
+  }
+}
+
+.controls {
+  position: absolute;
+  top: 25%;
+
+  .controls-prev,
+  .controls-next {
+    position: absolute;
+    top: 120px;
+    transition: all 1s ease-in-out;
+    transform-origin: bottom center;
+    cursor: pointer;
+  }
+
+  .controls-prev {
+    left: -300px;
+  }
+
+  .controls-prev:hover {
+    transform: rotateZ(-30deg);
+  }
+
+  .controls-next {
+    right: -300px;
+  }
+
+  .controls-next:hover {
+    transform: rotateZ(30deg);
+  }
+}
+
+.sitting-bird {
+  position: absolute;
+  top: -36px;
+  right: -5px;
+  z-index: 3;
+}
+
+.eagle {
+  position: absolute;
+  top: -131px;
+  right: -44px;
+  z-index: 3;
+}
+
+/* <SLIDER> */
+
+.slider__item {
+  display: none;
+  position: relative;
+  margin: 0 auto;
+  animation: 2s ease-in-out;
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  width: 100%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 110%;
+  }
+
+  to {
+    left: 0%;
+  }
+}
+
+/* </SLIDER> */
+
+.footer {
+  &__container {
+    position: relative;
+    height: 180px;
+  }
+}
+
+.footer .menu {
+  &__list {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__item {
+    position: relative;
+    bottom: -80px;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+  }
+
+  &__item:hover {
+    bottom: 0px;
+  }
+}
+
+.year {
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  font-size: 30px;
+  color: black;
+}
+
+.rs-logo {
+  position: absolute;
+  top: 23%;
+  left: 27%;
+}
+
+.gh-logo {
+  position: absolute;
+  top: 18%;
+  left: 27%;
+}
+
+/*---MEDIA---*/
+
+@media (max-width: 950px) {
+  .body {
+    height: auto;
+    font-size: 16px;
+  }
+  .body a,
+  .year {
+    font-size: 16px;
+  }
+  .header .menu__list {
+    max-width: 100%;
+  }
+  .main__container {
+    padding: 0px 60px 0px 60px;
+  }
+  .link-board {
+    width: 80px;
+  }
+  .quiz-logo {
+    margin-right: 10px;
+    width: 100px;
+    height: 70px;
+  }
+  .footer-board {
+    width: 100px;
+  }
+  .footer .menu__item {
+    &:hover {
+      bottom: -60px;
+    }
+  }
+  .eagle {
+    width: 150px;
+    top: -59px;
+  }
+  .sitting-bird {
+    top: -19px;
+    width: 50px;
+  }
+  .gh-logo img,
+  .rs-logo img {
+    width: 50px;
+  }
+  .slider {
+    overflow: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  .body a,
+  .year {
+    font-size: 12px;
+  }
+  .header__container {
+    padding: 0px 10px;
+  }
+  .header .menu__item {
+    top: -10px;
+  }
+  .quiz-logo {
+    top: -15px;
+    width: 60px;
+    height: 40px;
+  }
+  .link-board {
+    width: 60px;
+  }
+  .controls {
+    top: 38%;
+  }
+  .controls .controls-next {
+    img {
+      width: 50px;
+    }
+    right: -165px;
+  }
+  .controls .controls-prev {
+    img {
+      width: 50px;
+    }
+    left: -165px;
+  }
+  .main__container {
+    padding: 0px;
+  }
+  .video-container,
+  .iframe {
+    max-width: 320px;
+  }
+  .video-title {
+    top: 0px;
+  }
+  .slider {
+    overflow: visible;
+  }
+  .footer__container {
+    padding: 0px;
+  }
+
+  .footer .menu__item {
+    bottom: 0px;
+    &:hover {
+      bottom: 0px;
+    }
+  }
+  .footer .menu__list {
+    height: 100%;
+  }
+}

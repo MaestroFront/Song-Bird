@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link type="image/x-icon" href="./assets/img/favicon.svg" rel="shortcut icon">
+    <title>Song Birds</title>
+</head>
+
+<body class="body">
+    <div class="wrapper">
+        <main class="main">
+            <div class="main__container">
+                <img class="wow" src="./assets/img/wow.gif" alt="wow">
+                <div class="popup">
+                    <p>Твой результат: <span class="popup-score"></span> баллов(а)!</p>
+                    <p>Поздравляю!!!</p>
+                    <form class="form-save" action="../results/index.html">
+                        <input class="user-name" type="text" placeholder="Впиши сюда своё имя" maxlength="15">
+                        <button class="save-name">Сохранить</button>
+                    </form>
+                </div>
+
+                <img class="green-board" src="./assets/img/green-board.png" alt="green board">
+                <img class="next-question" src="./assets/img/next-question.gif" alt="next question">
+
+                <article class="questions-score">
+                    <ul class="questions__list">
+                        <li class="questions__item current">Вопрос №1</li>
+                        <li class="questions__item">Вопрос №2</li>
+                        <li class="questions__item">Вопрос №3</li>
+                        <li class="questions__item">Вопрос №4</li>
+                        <li class="questions__item">Вопрос №5</li>
+                        <li class="questions__item">Вопрос №6</li>
+                    </ul>
+                </article>
+
+                <article class="current-question">
+                    <div class="bird-unknown-image">
+                        <img class="bird" src="./assets/img/unknown-bird.gif" width="100 alt=" unknown bird">
+                    </div>
+                    <div class="bird-data">
+                        <div class="bird-name">*****</div>
+                        <div class="bird-data__voice">
+                            <div class="player">
+                                <audio class="audio" src="" controls></audio>
+                                <input class="cur-time" type="range" min="0" max="10" step="0" value="0">
+                                <button class="play-btn">►</button>
+                                <div class="play-time">00:00</div>
+                                <div class="speaker">🔊</div>
+                                <input class="volume" type="range" min="0" max="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="score">
+                        <p>Баллы: </p><span class="score-value">0</span>
+                    </div>
+                </article>
+
+                <article class="answers">
+                    <div class="answers__list">
+                        <button class="answers__item"></button>
+                        <button class="answers__item"></button>
+                        <button class="answers__item"></button>
+                        <button class="answers__item"></button>
+                        <button class="answers__item"></button>
+                        <button class="answers__item"></button>
+                    </div>
+                    <div class="description">
+                        <div class="description-rules"></div>
+                        <div class="bird-description">
+                            <div class="bird-image">
+                                <img class="bird" width="200" src="./assets/img/unknown-bird.gif" alt="bird">
+                            </div>
+                            <div class="bird-characteristic">
+                                <p class="bird-name"></p>
+                                <p class="bird-species"></p>
+                                <div class="player">
+                                    <audio class="audio" src="" controls></audio>
+                                    <input class="cur-time" type="range" min="0" max="10" step="0" value="0">
+                                    <button class="play-btn">►</button>
+                                    <div class="play-time">00:00</div>
+                                    <div class="speaker">🔊</div>
+                                    <input class="volume" type="range" min="0" max="10">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bird-about">
+                            <p></p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="buttons">
+                    <a href="../index.html" class="btn btn-back">Главная страница</a>
+                    <button class="btn btn-end">Закончить викторину</button>
+                    <button class="btn btn-next">Следующий вопрос</button>
+                    <a href="../results/index.html" class="btn btn-result">Результаты</a>
+                </article>
+
+            </div>
+        </main>
+    </div>
+    <script type="module" src="./js/script.js"></script>
+    <script src="./js/audioplayer.js"></script>
+    <script src="./js/audioplayer-mini.js"></script>
+</body>
+
+</html>
